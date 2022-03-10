@@ -10,10 +10,8 @@ module LuhnValidator
 
     # TODO: use the integers in nums_a to validate its last check digit
     check_digit = nums_a.pop
-    nums_even = nums_a.select.with_index { |_, i| i.even? }.map { |i| (i * 2) / 10 + (i * 2) % 10 }.reduce(&:+)
-    nums_odd = nums_a.select.with_index { |_, i| i.odd? }.reduce(&:+)
-    # puts nums_even 
-    # puts nums_odd
+    nums_even = nums_a.reverse.select.with_index { |_, i| i.even? }.map { |i| (i * 2) / 10 + (i * 2) % 10 }.reduce(&:+)
+    nums_odd = nums_a.reverse.select.with_index { |_, i| i.odd? }.reduce(&:+)
     ((nums_even + nums_odd) * 9 % 10) == check_digit
   end
 end

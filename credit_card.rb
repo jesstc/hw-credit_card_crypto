@@ -53,6 +53,3 @@ class CreditCard
     #   - Credit cards with identical information should produce the same hash
   end
 end
-
-# my_card = CreditCard.new(374842548357378, "expiration_date", "owner", "credit_network")
-# puts my_card.validate_checksum
